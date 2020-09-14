@@ -60,15 +60,15 @@ let crearTablaCliente = (arregloClientes, callback) => {
 
 http
   .createServer((req, res) => {
-    var q = url.parse(req.url, true);
-    if (q.pathname.includes("proveedores")) {
+    const q = url.parse(req.url, true);
+    if (q.pathname.includes("/api/proveedores")) {
       axios.get(urlProveedores).then((response) => {
         crearTablaProveedor(response.data, (data) => {
           res.writeHead(200, { "Content-Type": "text/html" });
           res.end(data.toString());
         });
       });
-    } else if (q.pathname.includes("clientes")) {
+    } else if (q.pathname.includes("/api/clientes")) {
       axios.get(urlClientes).then((response) => {
         crearTablaCliente(response.data, (data) => {
           res.writeHead(200, { "Content-Type": "text/html" });
