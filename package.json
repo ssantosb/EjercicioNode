@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ssantosb/EjercicioNode#readme",
   "dependencies": {
+    "git": "^0.1.5",
     "wget": "0.0.1",
     "wget-improved": "^3.2.1"
   }
